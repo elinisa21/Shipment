@@ -5,7 +5,6 @@ import com.trilogyed.clientservice.model.ShipmentViewModel;
 import com.trilogyed.clientservice.util.feign.ShipmentClient;
 import org.junit.Before;
 import org.junit.Test;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -29,9 +28,9 @@ public class ServiceLayerTest {
 
     @Test
     public void saveFindShipment() {
-        Shipment shipment = new Shipment();
-        shipment.setName("The Alchemist");
-        shipment.setTrackingNumber("200000a");
+        ShipmentViewModel shipment = new ShipmentViewModel();
+        shipment.setName("Morpheus");
+        shipment.setTrackingNumber("123ab");
 
         ShipmentViewModel shipmentViewModel = serviceLayer.addShipment(shipment);
         ShipmentViewModel fromService = serviceLayer.getShipment(shipmentViewModel.getTrackingNumber());
