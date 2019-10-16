@@ -16,10 +16,14 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<spring-cloud.version>Greenwich.SR2</spring-cloud.version>
+		<spring-cloud.version>Greenwich.SR3</spring-cloud.version>
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-hateoas</artifactId>
@@ -32,7 +36,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -44,25 +51,58 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-feign</artifactId>
-			<version>1.4.7.RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-		</dependency>
-
 	</dependencies>
+
+
+
+<!--	<dependencies>-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-hateoas</artifactId>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-jdbc</artifactId>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-web</artifactId>-->
+<!--		</dependency>-->
+
+<!--		<dependency>-->
+<!--			<groupId>mysql</groupId>-->
+<!--			<artifactId>mysql-connector-java</artifactId>-->
+<!--			<version>5.1.46</version>-->
+<!--			<scope>runtime</scope>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-test</artifactId>-->
+<!--			<scope>test</scope>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.cloud</groupId>-->
+<!--			<artifactId>spring-cloud-starter-feign</artifactId>-->
+<!--			<version>1.4.7.RELEASE</version>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-actuator</artifactId>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.cloud</groupId>-->
+<!--			<artifactId>spring-cloud-starter-config</artifactId>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.cloud</groupId>-->
+<!--			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->
+<!--		</dependency>-->
+<!--&lt;!&ndash;		<dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;			<groupId>com.h2database</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;			<artifactId>h2</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;		</dependency>&ndash;&gt;-->
+
+<!--	</dependencies>-->
 
 	<dependencyManagement>
 		<dependencies>
