@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 @Repository
 public class ShipmentDaoJdbcTemplateImpl implements ShipmentDao {
@@ -17,6 +18,10 @@ public class ShipmentDaoJdbcTemplateImpl implements ShipmentDao {
             "insert into usps_shipment_service (name, tracking_number) values (?, ?)";
     public static final String SELECT_SHIPMENT =
             "select * from usps_shipment_service where tracking_number = ?";
+    public static final String DELETE_SHIPMENT =
+            "delete from usps_shipment_service where shipment_id=?";
+    public static final String SELECT_ALL_SHIPMENTS =
+            "select * from usps_shipment_service";
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -57,5 +62,19 @@ public class ShipmentDaoJdbcTemplateImpl implements ShipmentDao {
         shipment.setTrackingNumber(rs.getString("tracking_number"));
 
         return shipment;
+    }
+
+    @Override
+    public void deleteShipment(int id) {
+
+        jdbcTemplate.update(DELETE_SHIPMENT, id);
+
+
+    }
+    @Override
+    public List<Shipment> getAll(){
+
+        return jdbcTemplate.query(SELECT_ALL_SHIPMENTS, this::mapRowToShipment);
+
     }
 }
